@@ -10,7 +10,6 @@ import MoviesContext, {MoviesProvider} from '../contexts/MoviesContext'
 export default function App () {
 
     
-
     return (
         <MoviesProvider>
             <Header />

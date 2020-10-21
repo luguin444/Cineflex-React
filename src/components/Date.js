@@ -6,7 +6,7 @@ import MoviesContext from '../contexts/MoviesContext'
 
 export default function Date (props) {
 
-    const { setSessionSelected } = useContext( MoviesContext );
+    const { setSessionSelected, setDateSelected } = useContext( MoviesContext );
 
     const {day} = props;
     const {weekday, date, showtimes } = day;
@@ -16,7 +16,11 @@ export default function Date (props) {
             <StyledDate> {`${weekday} - ${date}`} </StyledDate>
             {showtimes.map( time => 
                 <Link to = "/seats" key = {time.id} >   
-                    <Time onClick = { () => setSessionSelected(time)} > 
+                    <Time onClick = { () => {
+                        setSessionSelected(time);
+                        setDateSelected(day);
+                      }}
+                    > 
                         {time.name} 
                     </Time> 
                 </Link>   )
