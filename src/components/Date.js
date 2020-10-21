@@ -1,7 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
+
+import MoviesContext from '../contexts/MoviesContext'
 
 export default function Date (props) {
+
+    const { setSessionSelected } = useContext( MoviesContext );
 
     const {day} = props;
     const {weekday, date, showtimes } = day;
@@ -9,7 +14,13 @@ export default function Date (props) {
     return (
         <>
             <StyledDate> {`${weekday} - ${date}`} </StyledDate>
-            {showtimes.map( time => <Time key= {time.id}> {time.name} </Time>)} 
+            {showtimes.map( time => 
+                <Link to = "/seats" key = {time.id} >   
+                    <Time onClick = { () => setSessionSelected(time)} > 
+                        {time.name} 
+                    </Time> 
+                </Link>   )
+            } 
         </>
     );
 }

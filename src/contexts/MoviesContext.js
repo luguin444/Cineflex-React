@@ -19,9 +19,12 @@ export function MoviesProvider (props) {
     },[]);
 
     const [movieSelected, setMovieSelected] = useState(null);
+    const [sessionSelected, setSessionSelected] = useState(null);
+
+    console.log(sessionSelected);
 
     return (
-        <MoviesContext.Provider value = {{movieSelected, setMovieSelected, moviesData}}>
+        <MoviesContext.Provider value = {{movieSelected, setMovieSelected, setSessionSelected, moviesData}}>
             {props.children}
         </MoviesContext.Provider>
     );
