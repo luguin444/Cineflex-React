@@ -1,17 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
+
+import MoviesContext from '../contexts/MoviesContext'
 
 export default function Seat (props) {
 
+    const { seatsSelected, setSeatsSelected } = useContext( MoviesContext); 
+
     const [isSelected, setIsSelected] = useState(false);
 
-    const {aviability} = props;
+    const {aviability, id} = props;
     
     return (
         <StyledSeat 
             aviability = {aviability}
             isSelected = {isSelected}
-            onClick = {() => setIsSelected(!isSelected)}
+            onClick = {() => {
+                if(!aviability)
+                    alert("Assento está indispońivel, selecione novamente");
+                else {
+                    setIsSelected(!isSelected);
+                    const newSeats = {...seatsSelected};
+                    newSeats.ids.push([id]);
+                    setSeatsSelected(newSeats);
+                }    
+            }}
         />
     );
 }

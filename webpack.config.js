@@ -28,4 +28,5 @@ module.exports = {
         historyApiFallback: true,
       },
       mode: process.env.NODE_ENV === "production" ? "production" : "development"  //sair erros mais semanticos no console
+      devtool: "source-map" //usar o debugger com codigo igual ao original
 };
