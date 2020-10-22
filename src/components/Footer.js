@@ -5,13 +5,16 @@ import MoviesContext from '../contexts/MoviesContext'
 
 export default function Footer () {
 
-    const { movieSelected } = useContext(MoviesContext);
+    const { movieSelected, dateSelected, sessionSelected } = useContext(MoviesContext);
 
     
     return (
         <FooterContainer>
             <img src = {movieSelected.posterURL} />
-            <div> {movieSelected.title} </div>
+            <div>
+                <div> {movieSelected.title} </div> 
+                {sessionSelected !== null ? <div>{`${dateSelected.weekday} - ${sessionSelected.name}`}</div>: ''}
+            </div>
         </FooterContainer>
     );
 }
@@ -35,9 +38,9 @@ const FooterContainer = styled.div`
     }
 
     div{
-        margin-left: 1rem; 
         font-size: 1.3rem;
         color: #444;
         font-weight: 500;
+        margin: 0.5rem 1rem;
     }
 `

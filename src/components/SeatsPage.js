@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import MoviesContext from '../contexts/MoviesContext'
 
 import {H2} from './LandingPage'
+import ContainerSeats from './ContainerSeats'
+import Legend from './Legend'
 import Footer from './Footer'
 
 export default function SeatsPage () {
@@ -14,47 +16,28 @@ export default function SeatsPage () {
         <>
             <main>
                 <H2> Selecione o(s) Assento(s) </H2>
-                <ContainerSeats>
-                    {sessionSelected.seats.map( item => 
-                        <div key = {item.id}>
-                            <button> </button>
-                            <span>{item.name}</span>
-                        </div>
-                        )
-                    }
-                </ContainerSeats>
-                
+                <ContainerSeats />
+                <Legend />
+                <Button>Reservar assento(s)</Button>
             </main>
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
 
-const ContainerSeats = styled.div`
-    
-    width: 100%;
-    max-width: 100%;
-    padding: 0 1.3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+const Button = styled.button`
 
-    button {
-        width: 25px;
-        height: 25px;
-        border-radius:50%;
-        background-color: black;
-        border: 0;
-    }
-    div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0.3rem 0.2rem;
-    }
-    span {
-        font-size: 0.4rem;
-        margin-top: 0.16rem;
-    }
+    color: #fff;
+    font-size: 1.05rem;
+    width: 14rem;
+    height: 2.6rem;
+    background-color: #db7114;
+    border-radius: 0.25rem;
+    border: 0;
+    margin: 0 auto;
+    margin-top: 1.1rem;
+    margin-bottom: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `
