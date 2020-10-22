@@ -21,12 +21,16 @@ export function MoviesProvider (props) {
     const [movieSelected, setMovieSelected] = useState(null);
     const [dateSelected, setDateSelected] = useState(null);
     const [sessionSelected, setSessionSelected] = useState(null);
+    const [seatsSelected, setSeatsSelected] = useState(null);
+
 
     console.log(dateSelected);
 
     return (
-        <MoviesContext.Provider value = {{movieSelected, setMovieSelected, sessionSelected, setSessionSelected, dateSelected, setDateSelected, moviesData}}>
-            {props.children}
+        <MoviesContext.Provider value = {{movieSelected, setMovieSelected, sessionSelected, setSessionSelected, 
+            dateSelected, setDateSelected, seatsSelected, setSeatsSelected, moviesData}}>
+
+              {props.children}
         </MoviesContext.Provider>
     );
 }

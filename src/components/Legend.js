@@ -10,7 +10,7 @@ export default function Legend () {
                 <div></div>
                 <span>Selecionado</span>
             </LineLegend >
-            <LineLegend color = "#57859c" border = "#1e408f"> 
+            <LineLegend color = "#57859c" border = "#57859c"> 
                 <div></div>
                 <span>Disponível</span>
             </LineLegend>

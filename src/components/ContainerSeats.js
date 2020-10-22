@@ -2,17 +2,19 @@ import React, {useContext} from 'react'
 import styled from 'styled-components'
 
 import MoviesContext from '../contexts/MoviesContext'
+import Seat from './Seat'
 
 export default function ContainerSeats () {
 
     const { sessionSelected } = useContext( MoviesContext);
+    //const useState, pensando em criar um botão desses como elementos e por um Usestate pra cada 
 
     
     return (
         <StyledContainerSeats>
             {sessionSelected.seats.map( item => 
                 <div key = {item.id}>
-                    <button> </button>
+                    <Seat aviability = {item.isAvailable} />
                     <span>{item.name}</span>
                 </div>
                 )
@@ -32,13 +34,6 @@ const StyledContainerSeats = styled.div`
     flex-wrap: wrap;
     margin-bottom: 1rem;
 
-    button {
-        width: 25px;
-        height: 25px;
-        border-radius:50%;
-        background-color: black;
-        border: 0;
-    }
     div {
         display: flex;
         flex-direction: column;
