@@ -14,7 +14,7 @@ export default function ContainerSeats () {
         <StyledContainerSeats>
             {sessionSelected.seats.map( item => 
                 <div key = {item.id}>
-                    <Seat aviability = {item.isAvailable} id = {item.id} />
+                    <Seat aviability = {item.isAvailable} id = {item.id} number = {item.name} />
                     <span>{item.name}</span>
                 </div>
                 )

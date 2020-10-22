@@ -5,6 +5,7 @@ import Header from './Header'
 import LandingPage from './LandingPage'
 import SessionPage from './SessionPage'
 import SeatsPage from './SeatsPage'
+import SucessPage from './SucessPage'
 import MoviesContext, {MoviesProvider} from '../contexts/MoviesContext'
 
 export default function App () {
@@ -15,6 +16,10 @@ export default function App () {
             <Header />
             <Router>
                 <Switch>
+
+                    <Route path = "/sucess">
+                        <SucessPage />
+                    </Route>
 
                      <Route path = "/seats">
                         <SeatsPage />

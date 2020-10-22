@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import {Link} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
@@ -11,11 +12,10 @@ import Footer from './Footer'
 
 export default function SeatsPage () {
 
-    const { sessionSelected, seatsSelected } = useContext( MoviesContext );
+    const { sessionSelected, IdSeatsSelected } = useContext( MoviesContext );
 
-    const sendSeatsToServer = (seatsSelected) => {
-        const request = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v1/cineflex/seats/book_many",seatsSelected);
-        request.then( () => console.log("deu bom"));
+    const sendSeatsToServer = (IdSeatsSelected) => {
+        const request = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v1/cineflex/seats/book_many",IdSeatsSelected);
     }
     
     return (
@@ -24,7 +24,7 @@ export default function SeatsPage () {
                 <H2> Selecione o(s) Assento(s) </H2>
                 <ContainerSeats />
                 <Legend />
-                <Button onClick = {() => sendSeatsToServer(seatsSelected)}>Reservar assento(s)</Button>
+                <Link to = "/sucess"><Button onClick = {() => sendSeatsToServer(IdSeatsSelected)}>Reservar assento(s)</Button></Link>
             </main>
             <Footer />
         </>
@@ -33,7 +33,7 @@ export default function SeatsPage () {
 
 
 
-const Button = styled.button`
+export const Button = styled.button`
 
     color: #fff;
     font-size: 1.05rem;

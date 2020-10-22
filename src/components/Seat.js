@@ -5,11 +5,11 @@ import MoviesContext from '../contexts/MoviesContext'
 
 export default function Seat (props) {
 
-    const { seatsSelected, setSeatsSelected } = useContext( MoviesContext); 
+    const { IdSeatsSelected, setIdSeatsSelected, numberSeatsSelected, setNumberSeatsSelected } = useContext( MoviesContext); 
 
     const [isSelected, setIsSelected] = useState(false);
 
-    const {aviability, id} = props;
+    const {aviability, id, number} = props;
     
     return (
         <StyledSeat 
@@ -20,9 +20,10 @@ export default function Seat (props) {
                     alert("Assento está indispońivel, selecione novamente");
                 else {
                     setIsSelected(!isSelected);
-                    const newSeats = {...seatsSelected};
+                    const newSeats = {...IdSeatsSelected};
                     newSeats.ids.push([id]);
-                    setSeatsSelected(newSeats);
+                    setIdSeatsSelected(newSeats);
+                    setNumberSeatsSelected([...numberSeatsSelected, number])
                 }    
             }}
         />
