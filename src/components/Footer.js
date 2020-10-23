@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
 
 import MoviesContext from '../contexts/MoviesContext'
@@ -7,8 +8,14 @@ export default function Footer () {
 
     const { movieSelected, dateSelected, sessionSelected } = useContext(MoviesContext);
 
+    const history = useHistory();
+
+    function goToLastPage () {
+        history.goBack();
+    }
+
     return (
-        <FooterContainer>
+        <FooterContainer onClick = {goToLastPage}>
             <img src = {movieSelected.posterURL} />
             <div>
                 <div> {movieSelected.title} </div> 

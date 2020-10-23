@@ -31,7 +31,6 @@ export default function Seat (props) {
                         newSeats.ids.push([id]);
                         newNumbers.push(number);
                     }
-
                     setIdSeatsSelected(newSeats);
                     setNumberSeatsSelected(newNumbers);
 

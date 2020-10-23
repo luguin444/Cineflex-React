@@ -8,9 +8,14 @@ import MoviesContext from '../contexts/MoviesContext'
 
 export default function SucessPage () {
 
-    const {movieSelected, dateSelected, sessionSelected, numberSeatsSelected, setNumberSeatsSelected} = useContext( MoviesContext);
+    const {movieSelected, dateSelected, sessionSelected, numberSeatsSelected, setNumberSeatsSelected, setIdSeatsSelected} = useContext( MoviesContext);
 
     setNumberSeatsSelected(numberSeatsSelected.sort((a,b) => a-b));  //vetor em ordem crescente
+
+    function resetSeatsPosition (setNumberSeatsSelected,setIdSeatsSelected) {
+        setNumberSeatsSelected([]);
+        setIdSeatsSelected({ids: []});
+    }
 
     return (
         <>
@@ -22,7 +27,7 @@ export default function SucessPage () {
                     {numberSeatsSelected.map( (item,index) => <div key = {index}> {`Assento ${item}`} </div> )}
                 </div>
             </Main>
-            <Link to = "/"> <Button>Home</Button> </Link> 
+            <Link to = "/"> <Button onClick = {() => resetSeatsPosition (setNumberSeatsSelected,setIdSeatsSelected)}>Home</Button> </Link> 
 
         </>
     );
