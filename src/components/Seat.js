@@ -25,11 +25,11 @@ export default function Seat (props) {
 
                     if(isSelected === true) {                       
                         newSeats.ids = newSeats.ids.filter( item => item !== id);
-                        newNumbers = newNumbers.filter( item => item !== number);
+                        newNumbers = newNumbers.filter( item => item.seat !== number);
 
                     } else {
                         newSeats.ids.push([id]);
-                        newNumbers.push(number);
+                        newNumbers.push({seat: number, entrance: "inteira"});
                     }
                     setIdSeatsSelected(newSeats);
                     setNumberSeatsSelected(newNumbers);

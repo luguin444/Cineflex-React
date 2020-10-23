@@ -12,7 +12,7 @@ import MoviesContext from '../contexts/MoviesContext'
 
 export default function SeatsPage () {
 
-    const { sessionSelected, IdSeatsSelected } = useContext( MoviesContext );
+    const { sessionSelected, IdSeatsSelected, setNumberSeatsSelected, setIdSeatsSelected } = useContext( MoviesContext );
 
     const sendSeatsToServer = (IdSeatsSelected) => {
         const request = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v1/cineflex/seats/book_many",IdSeatsSelected);
@@ -24,7 +24,7 @@ export default function SeatsPage () {
                 <H2> Selecione o(s) Assento(s) </H2>
                 <ContainerSeats />
                 <Legend />
-                <Link to = "/sucess"><Button onClick = {() => sendSeatsToServer(IdSeatsSelected)}>Reservar assento(s)</Button></Link>
+                <Link to = "/ticket"><Button onClick = {() => sendSeatsToServer(IdSeatsSelected)}>Reservar assento(s)</Button></Link>
             </main>
             <Footer />
         </>

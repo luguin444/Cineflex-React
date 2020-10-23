@@ -30,7 +30,7 @@ export default function Date (props) {
 }
 
 
-const StyledDate = styled.div`
+export const StyledDate = styled.div`
 
     margin-bottom: 1.2rem;
     margin-left: 1.3rem;
