@@ -1,15 +1,13 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 
-import Movie from './Movie'
-import MoviesContext from '../contexts/MoviesContext'
+import Movie from '../components/Movie'
 
+import MoviesContext from '../contexts/MoviesContext'
 
 export default function LandingPage () {
 
     const { moviesData } = useContext(MoviesContext);
-
-    console.log(moviesData);
 
     return (
         <main>
@@ -24,7 +22,8 @@ export default function LandingPage () {
 export const H2 = styled.h2`
     text-align: center;
     font-size: 1.45rem;
-    color: #28374a;
+    font-weight: 600;
+    color: #444;
     margin-bottom: 2rem;
 `
 

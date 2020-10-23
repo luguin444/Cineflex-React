@@ -13,7 +13,7 @@ export default function Movie (props) {
     
     return (
         <Link to = "/sessions">
-            <Img src = {posterURL} onClick = {() => setMovieSelected(movie) }/>
+            <Img src = {posterURL} onClick = { () => setMovieSelected(movie) }/>
         </Link>
     );
 }

@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import styled from 'styled-components'
 
-import MoviesContext from '../contexts/MoviesContext'
-
 import {H2} from './LandingPage'
-import ContainerSeats from './ContainerSeats'
-import Legend from './Legend'
-import Footer from './Footer'
+import ContainerSeats from '../components/ContainerSeats'
+import Legend from '../components/Legend'
+import Footer from '../components/Footer'
+
+import MoviesContext from '../contexts/MoviesContext'
 
 export default function SeatsPage () {
 
@@ -30,8 +30,6 @@ export default function SeatsPage () {
         </>
     );
 }
-
-
 
 export const Button = styled.button`
 

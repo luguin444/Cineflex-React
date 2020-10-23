@@ -1,14 +1,13 @@
 import React, {useContext} from 'react'
 import styled from 'styled-components'
 
-import MoviesContext from '../contexts/MoviesContext'
 import Seat from './Seat'
+
+import MoviesContext from '../contexts/MoviesContext'
 
 export default function ContainerSeats () {
 
     const { sessionSelected } = useContext( MoviesContext);
-    //const useState, pensando em criar um botão desses como elementos e por um Usestate pra cada 
-
     
     return (
         <StyledContainerSeats>
@@ -41,7 +40,7 @@ const StyledContainerSeats = styled.div`
         margin: 0.3rem 0.2rem;
     }
     span {
-        font-size: 0.4rem;
+        font-size: 0.45rem;
         margin-top: 0.16rem;
     }
 `

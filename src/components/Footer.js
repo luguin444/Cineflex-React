@@ -7,7 +7,6 @@ export default function Footer () {
 
     const { movieSelected, dateSelected, sessionSelected } = useContext(MoviesContext);
 
-    
     return (
         <FooterContainer>
             <img src = {movieSelected.posterURL} />
@@ -30,6 +29,7 @@ const FooterContainer = styled.div`
     display: flex;
     align-items: center;
     padding: 0.7rem 0 1rem 1.3rem;
+    border-top: 2px solid #ccc;
 
     img {
         width: 4rem;

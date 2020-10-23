@@ -34,9 +34,9 @@ const StyledDate = styled.div`
 
     margin-bottom: 1.2rem;
     margin-left: 1.3rem;
-    color: #444;
+    color: #888;
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 600;
 `
 
 const Time = styled.button`

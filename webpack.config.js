@@ -27,6 +27,6 @@ module.exports = {
         port: 9000,
         historyApiFallback: true,
       },
-      mode: process.env.NODE_ENV === "production" ? "production" : "development"  //sair erros mais semanticos no console
+      mode: process.env.NODE_ENV === "production" ? "production" : "development",  //sair erros mais semanticos no console
       devtool: "source-map" //usar o debugger com codigo igual ao original
 };

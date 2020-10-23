@@ -2,16 +2,16 @@ import React, {useContext} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 
-import MoviesContext from '../contexts/MoviesContext'
-
 import {Button} from './SeatsPage'
 
+import MoviesContext from '../contexts/MoviesContext'
 
 export default function SucessPage () {
 
-    const {movieSelected, dateSelected, sessionSelected, numberSeatsSelected} = useContext( MoviesContext); 
+    const {movieSelected, dateSelected, sessionSelected, numberSeatsSelected, setNumberSeatsSelected} = useContext( MoviesContext);
 
-    
+    setNumberSeatsSelected(numberSeatsSelected.sort((a,b) => a-b));  //vetor em ordem crescente
+
     return (
         <>
             <H2> Pedido feito <br /> com sucesso! </H2>

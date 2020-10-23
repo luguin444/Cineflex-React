@@ -24,8 +24,6 @@ export function MoviesProvider (props) {
     const [numberSeatsSelected, setNumberSeatsSelected] = useState([]);
     const [IdSeatsSelected, setIdSeatsSelected] = useState({ids: []});
 
-    console.log(numberSeatsSelected);
-
 
     return (
         <MoviesContext.Provider value = {{movieSelected, setMovieSelected, sessionSelected, setSessionSelected, 

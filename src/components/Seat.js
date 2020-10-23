@@ -17,13 +17,25 @@ export default function Seat (props) {
             isSelected = {isSelected}
             onClick = {() => {
                 if(!aviability)
-                    alert("Assento está indispońivel, selecione novamente");
+                    alert("Esse assento não está disponível");
                 else {
-                    setIsSelected(!isSelected);
-                    const newSeats = {...IdSeatsSelected};
-                    newSeats.ids.push([id]);
+
+                    let newSeats = {...IdSeatsSelected};
+                    let newNumbers = [...numberSeatsSelected];
+
+                    if(isSelected === true) {                       
+                        newSeats.ids = newSeats.ids.filter( item => item !== id);
+                        newNumbers = newNumbers.filter( item => item !== number);
+
+                    } else {
+                        newSeats.ids.push([id]);
+                        newNumbers.push(number);
+                    }
+
                     setIdSeatsSelected(newSeats);
-                    setNumberSeatsSelected([...numberSeatsSelected, number])
+                    setNumberSeatsSelected(newNumbers);
+
+                    setIsSelected(!isSelected);
                 }    
             }}
         />
@@ -37,14 +49,13 @@ const StyledSeat = styled.button`
     border-radius:50%;
     background-color: ${ (props) => {
         if (props.isSelected) {
-            return "#54aba5";
+            return "#3ae83d";
         }
         else if (props.aviability)       
             return "#57859c";
         else 
             return "#f0ea7d";       
     }};
-
     &:focus {
         outline: 0;
     }

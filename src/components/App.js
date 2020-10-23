@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import Header from './Header'
-import LandingPage from './LandingPage'
-import SessionPage from './SessionPage'
-import SeatsPage from './SeatsPage'
-import SucessPage from './SucessPage'
+import LandingPage from '../pages/LandingPage'
+import SessionPage from '../pages/SessionPage'
+import SeatsPage from '../pages/SeatsPage'
+import SucessPage from '../pages/SucessPage'
+
 import MoviesContext, {MoviesProvider} from '../contexts/MoviesContext'
 
 export default function App () {
-
-    
+   
     return (
         <MoviesProvider>
             <Header />
@@ -36,6 +36,5 @@ export default function App () {
                 </Switch>
             </Router>
         </MoviesProvider>
-
     );
 }

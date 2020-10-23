@@ -3,10 +3,9 @@ import styled from 'styled-components'
 
 export default function Legend () {
 
-    
     return (
         <>
-            <LineLegend color = "#54aba5" border = "#3ccfc4">
+            <LineLegend color = "#3ae83d" border = "#3ae83d">
                 <div></div>
                 <span>Selecionado</span>
             </LineLegend >
@@ -14,7 +13,7 @@ export default function Legend () {
                 <div></div>
                 <span>Disponível</span>
             </LineLegend>
-            <LineLegend color = "#f0ea7d" border = "#ebe242">
+            <LineLegend color = "#f0ea7d" border = "#f0ea7d">
                 <div></div>
                 <span>Indisponível</span>
             </LineLegend>
@@ -36,7 +35,6 @@ const LineLegend = styled.div`
         background-color: ${ props => props.color};
         border: 3px solid ${ props => props.border};
     }
-
     span {
         font-size: 1rem;
         color: #444;
