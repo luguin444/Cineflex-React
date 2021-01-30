@@ -17,7 +17,6 @@ export default function App () {
             <Header />
             <Router>
                 <Switch>
-
                     <Route path = "/sucess">
                         <SucessPage />
                     </Route>
@@ -37,7 +36,6 @@ export default function App () {
                     <Route path = "/" >
                         <LandingPage />
                     </Route>
-
                 </Switch>
             </Router>
         </MoviesProvider>
