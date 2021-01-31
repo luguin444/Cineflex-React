@@ -2,7 +2,7 @@
 
 Cineflex é um app **React** para mobile, onde o usuário segue todo o fluxo da reserva de um filme em cartaz no cinema. 🙂
 
-## Demo: 
+## Demo: https://cineflex.herokuapp.com/
 
 ## Features
 
